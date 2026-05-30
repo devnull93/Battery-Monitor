@@ -408,7 +408,7 @@
       const chargeBtn = document.getElementById("charge-btn");
       const drainBtn = document.getElementById("drain-btn");
       let currentLevel = 100;
-      let isCharging = false;
+      //let isCharging = false;
       let batteryAPI = null;
 
       function formatTime(seconds) {
@@ -563,14 +563,14 @@
       function chargeBattery() {
          if (currentLevel >= 100) return;
 
-         isCharging = true;
+         //isCharging = true;
          const chargeInterval = setInterval(() => {
             if (currentLevel < 100) {
                 currentLevel += 1;
                 updateBattery(currentLevel / 100, true, 0, (100 - currentLevel) * 15);
             } else {
                 clearInterval(chargeInterval);
-                isCharging = false;
+                //isCharging = false;
             }
          }, 150);
       }
@@ -578,7 +578,7 @@
       function drainBattery() {
          if (currentLevel <= 0) return;
 
-         isCharging = false;
+         //isCharging = false;
          const drainInterval = setInterval(() => {
             if (currentLevel > 0) {
                 currentLevel -= 1;
